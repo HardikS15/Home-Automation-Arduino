@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Home Automation Demo</title>
+<style>
+#bulb1{
+width: 500px;
+height:500px;
+}
+#bulb2{
+width: 500px;
+height:500px;
+}
+#container{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<br>
+<h2><font color="blue"><center>Please click on a button in order to toggle its state</center></font><h2>
+<br><br>
+<div id="container">
+      <button type="button bulb1" id="2" class="bulb" >Toggle Button 1</button>&nbsp;&nbsp;
+      <button type="button bulb2" id="3" class="bulb">Toggle Button 2</button>
+      </div>
+<script src="jquery.min.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".bulb").click(function(){
+     var p = $(this).attr('id');
+      $.get("changeStatus.php", {pin:p}); 
+  });
+});
+</script>
+</body>
+</html>
